@@ -27,8 +27,16 @@
   .nav-links{display:flex;gap:30px}
   .nav-links a{color:#dceef4;font-size:15px;font-weight:500}
   .nav-links a:hover{color:#fff}
-  .nav .btn{padding:11px 22px;font-size:14px}
+  .nav .btn{padding:11px 22px;font-size:14px;white-space:nowrap}
   @media(max-width:860px){.nav-links{display:none}}
+  @media(max-width:560px){
+    .wrap{padding:0 16px}
+    .nav{height:60px;gap:10px}
+    .logo{font-size:18px;gap:9px}
+    .logo .mark{width:34px;height:34px;font-size:19px}
+    .logo small{display:none}
+    .nav .btn{padding:9px 15px;font-size:13px}
+  }
 
   /* HERO */
   .hero{min-height:100vh;display:flex;align-items:center;position:relative;color:#fff;
