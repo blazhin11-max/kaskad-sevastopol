@@ -12,7 +12,7 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:'Segoe UI',Roboto,-apple-system,sans-serif;color:var(--ink);background:var(--sand-lt);line-height:1.6}
+  body{font-family:'Segoe UI',Roboto,-apple-system,sans-serif;color:var(--ink);background:var(--sand-lt);line-height:1.6;overflow-x:hidden}
   a{text-decoration:none;color:inherit}
   .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
   .btn{display:inline-block;background:var(--gold);color:#3a2a06;font-weight:700;padding:15px 30px;border-radius:40px;border:none;cursor:pointer;font-size:16px;transition:.2s;box-shadow:0 8px 22px rgba(217,155,62,.35)}
@@ -29,14 +29,6 @@
   .nav-links a:hover{color:#fff}
   .nav .btn{padding:11px 22px;font-size:14px;white-space:nowrap}
   @media(max-width:860px){.nav-links{display:none}}
-  @media(max-width:560px){
-    .wrap{padding:0 16px}
-    .nav{height:60px;gap:10px}
-    .logo{font-size:18px;gap:9px}
-    .logo .mark{width:34px;height:34px;font-size:19px}
-    .logo small{display:none}
-    .nav .btn{padding:9px 15px;font-size:13px}
-  }
 
   /* HERO */
   .hero{min-height:100vh;display:flex;align-items:center;position:relative;color:#fff;
@@ -119,7 +111,7 @@
   .book .title,.book .eyebrow{color:#fff}.book .eyebrow{color:#f3d9a8}
   .form-box{background:#fff;border-radius:20px;padding:34px;color:var(--ink);box-shadow:var(--shadow)}
   .form-box label{font-size:13px;font-weight:700;color:var(--muted);display:block;margin:14px 0 6px}
-  .form-box input,.form-box select,.form-box textarea{width:100%;padding:13px;border:1px solid #d9e2e6;border-radius:10px;font-size:15px;background:#fbfdfe}
+  .form-box input,.form-box select,.form-box textarea{width:100%;min-width:0;max-width:100%;padding:13px;border:1px solid #d9e2e6;border-radius:10px;font-size:15px;background:#fbfdfe}
   .form-box .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .form-box button{width:100%;margin-top:22px}
   .contact-list{list-style:none;margin-top:26px}
@@ -129,6 +121,19 @@
 
   footer{background:#04303d;color:#9fc0cb;padding:40px 0;text-align:center;font-size:14px}
   footer .demo-note{margin-top:14px;color:#6f97a4;font-size:12px}
+
+  /* MOBILE — kept last so it overrides base rules at equal specificity */
+  @media(max-width:560px){
+    .wrap{padding:0 16px}
+    .nav{height:60px;gap:10px}
+    .logo{font-size:18px;gap:9px}
+    .logo .mark{width:34px;height:34px;font-size:19px}
+    .logo small{display:none}
+    .nav .btn{padding:9px 15px;font-size:13px}
+    section{padding:60px 0}
+    .form-box{padding:22px}
+    .form-box .row{grid-template-columns:1fr;gap:0}
+  }
 </style>
 </head>
 <body>
@@ -299,7 +304,10 @@
           <li><div class="ic">🕐</div><div>Заезд с 14:00 · выезд до 12:00 · стойка 24/7</div></li>
           <li><div class="ic">🏖️</div><div>200 м до пляжа «Толстяк»</div></li>
         </ul>
-        <div style="border-radius:16px;overflow:hidden;margin-top:10px;height:230px;background:linear-gradient(135deg,#0a6b8a,#053a4b);display:grid;place-items:center;color:#bcdbe5;font-size:15px;border:1px solid rgba(255,255,255,.1)">🗺️ Карта проезда · Северная сторона</div>
+        <div style="border-radius:16px;overflow:hidden;margin-top:10px;border:1px solid rgba(255,255,255,.12)">
+          <iframe title="Карта — Гостевой дом Каскад" loading="lazy" style="width:100%;height:230px;border:0;display:block" src="https://www.openstreetmap.org/export/embed.html?bbox=33.5120%2C44.6327%2C33.5300%2C44.6407&amp;layer=mapnik&amp;marker=44.6367226%2C33.5210013"></iframe>
+        </div>
+        <a href="https://www.openstreetmap.org/?mlat=44.6367226&amp;mlon=33.5210013#map=16/44.6367/33.5210" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;color:#f3d9a8;font-size:14px;font-weight:600">🗺️ Открыть карту проезда →</a>
       </div>
     </div>
   </div>
